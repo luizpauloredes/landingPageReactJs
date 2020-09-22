@@ -1,25 +1,51 @@
-import React from 'react';  
+import React from 'react';
 
 //okay from here below
+const Card = () => {
 
-const Card= ()=> {  
+  const deck = [
+    {
+      titulo: 'first title',
+      descricao: 'bla bla',
+      botao: 'btn',
+      imagem: 'https://picsum.photos/id/237/500/325'
+    },
+    {
+      titulo: 'first title',
+      descricao: 'bla bla',
+      botao: 'btn',
+      imagem: 'https://picsum.photos/id/237/500/325'
+    },
+    {
+      titulo: 'first title',
+      descricao: 'bla bla',
+      botao: 'btn',
+      imagem: 'https://picsum.photos/id/237/500/325'
+    },
+    {
+      titulo: 'first title',
+      descricao: 'bla bla',
+      botao: 'btn',
+      imagem: 'https://picsum.photos/id/237/500/325'
+    }
+  ]
 
-  
 
-  return(
+  return (
     <div className="container">
       <div className="row">
-      <div className="col-md-3">
-          <div className="card">
-          <img src="https://picsum.photos/id/237/500/325" className="card-img-top" alt="..." />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" className="btn btn-primary">Go somewhere</a>
+        {deck.map((e, index) => (
+          <div key={index} className="col-md-3">
+            <div className="card">
+              <img src={e.imagem} className="card-img-top" alt="..." />
+              <div className="card-body">
+        <h5 className="card-title">{e.titulo}</h5>
+        <p className="card-text">{e.descricao}</p>
+        <a href="#" className="btn btn-primary">{e.botao}</a>
+              </div>
+            </div>
           </div>
-        </div>
-     </div>
-          
+        ))}
       </div>
     </div>
   )
